@@ -67,9 +67,6 @@ class ResizableTableViewController: UITableViewController, UITableViewDelegate, 
         return UITableViewAutomaticDimension
     }
     
-    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
-    }
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         indexPathsToUpdate.removeAll(keepCapacity: false)
         
