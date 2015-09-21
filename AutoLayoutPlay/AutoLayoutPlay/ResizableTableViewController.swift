@@ -33,7 +33,7 @@ class ResizableTableViewController: UITableViewController, UITableViewDelegate, 
     }
     
     private struct Storyboard {
-        static let CustomCellIdentifier = "CustomCell"
+        static let CustomCellIdentifier = "SimpleResizableCell"
     }
 
     // MARK: - Table view data source
