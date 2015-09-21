@@ -68,6 +68,9 @@ class ResizableTableViewController: UITableViewController, UITableViewDelegate, 
     }
     
     override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         indexPathsToUpdate.removeAll(keepCapacity: false)
         
         if selectedIndexPath == indexPath {
@@ -84,11 +87,6 @@ class ResizableTableViewController: UITableViewController, UITableViewDelegate, 
         //tableView.reloadData()
         
         tableView.reloadRowsAtIndexPaths(indexPathsToUpdate, withRowAnimation: UITableViewRowAnimation.Automatic)
-    }
-    
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-       
-        
 
     }
 
