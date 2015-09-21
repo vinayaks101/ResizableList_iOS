@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23088C4E1BB00BBC00E53C58 /* CustomResizableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23088C4D1BB00BBC00E53C58 /* CustomResizableCell.swift */; };
+		23088C501BB00C1600E53C58 /* CustomResizableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23088C4F1BB00C1600E53C58 /* CustomResizableTableViewController.swift */; };
 		2374A8981BA0415F00333F2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2374A8971BA0415F00333F2A /* AppDelegate.swift */; };
 		2374A89F1BA0415F00333F2A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2374A89E1BA0415F00333F2A /* Images.xcassets */; };
 		2374A8A21BA0415F00333F2A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2374A8A01BA0415F00333F2A /* LaunchScreen.xib */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23088C4D1BB00BBC00E53C58 /* CustomResizableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomResizableCell.swift; sourceTree = "<group>"; };
+		23088C4F1BB00C1600E53C58 /* CustomResizableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomResizableTableViewController.swift; sourceTree = "<group>"; };
 		2374A8921BA0415F00333F2A /* ResizableList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResizableList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2374A8961BA0415F00333F2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2374A8971BA0415F00333F2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +62,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23088C511BB01A2800E53C58 /* CustomResizableTable */ = {
+			isa = PBXGroup;
+			children = (
+				23088C4D1BB00BBC00E53C58 /* CustomResizableCell.swift */,
+				23088C4F1BB00C1600E53C58 /* CustomResizableTableViewController.swift */,
+			);
+			name = CustomResizableTable;
+			sourceTree = "<group>";
+		};
+		23088C521BB01A4300E53C58 /* SimpleResizableTable */ = {
+			isa = PBXGroup;
+			children = (
+				237956E21BA2D22A00415989 /* ResizableTableViewCell.swift */,
+				237956E01BA2D18B00415989 /* ResizableTableViewController.swift */,
+			);
+			name = SimpleResizableTable;
+			sourceTree = "<group>";
+		};
 		2374A8891BA0415F00333F2A = {
 			isa = PBXGroup;
 			children = (
@@ -79,8 +101,8 @@
 		2374A8941BA0415F00333F2A /* ResizableList */ = {
 			isa = PBXGroup;
 			children = (
-				237956E21BA2D22A00415989 /* ResizableTableViewCell.swift */,
-				237956E01BA2D18B00415989 /* ResizableTableViewController.swift */,
+				23088C521BB01A4300E53C58 /* SimpleResizableTable */,
+				23088C511BB01A2800E53C58 /* CustomResizableTable */,
 				237956E41BA2E6A000415989 /* Main.storyboard */,
 				2374A8951BA0415F00333F2A /* Supporting Files */,
 			);
@@ -217,6 +239,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23088C4E1BB00BBC00E53C58 /* CustomResizableCell.swift in Sources */,
+				23088C501BB00C1600E53C58 /* CustomResizableTableViewController.swift in Sources */,
 				2374A8981BA0415F00333F2A /* AppDelegate.swift in Sources */,
 				237956E31BA2D22A00415989 /* ResizableTableViewCell.swift in Sources */,
 				237956E11BA2D18B00415989 /* ResizableTableViewController.swift in Sources */,
