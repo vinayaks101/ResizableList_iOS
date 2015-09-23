@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResizableTableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+class ResizableTableViewController: UITableViewController {
     
     private var data = [Int:String]()
     

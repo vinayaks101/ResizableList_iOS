@@ -10,6 +10,9 @@ import UIKit
 
 class CustomResizableCell: UITableViewCell {
 
-
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var companyNameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     
 }

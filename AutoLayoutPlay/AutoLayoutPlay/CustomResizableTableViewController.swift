@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomResizableTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class CustomResizableTableViewController: UITableViewController {
     
     private var data = [Int:String]()
     
@@ -18,11 +18,20 @@ class CustomResizableTableViewController: UITableViewController, UITableViewData
         data[2] = "Flash forward to now. With all the improvements to Interface Builder and the introduction of iOS 8, it’s finally easy to use auto layout to create dynamic table view cells!"
     }
     
-    private var selectedIndexPath: NSIndexPath? = nil
-
+    private var prevSelectedIndexPath: NSIndexPath? = nil
+    private var selectedIndexPath: NSIndexPath? {
+        willSet {
+            prevSelectedIndexPath = selectedIndexPath
+        }
+    }
+    private var indexPathsToUpdate = [NSIndexPath] ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initData()
+        tableView.estimatedRowHeight = CGFloat(100)
+        tableView.rowHeight = UITableViewAutomaticDimension
+
         tableView.reloadData()
     }
     
@@ -33,7 +42,6 @@ class CustomResizableTableViewController: UITableViewController, UITableViewData
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         return 1
     }
 
@@ -44,13 +52,32 @@ class CustomResizableTableViewController: UITableViewController, UITableViewData
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CustomCellIdentifier, forIndexPath: indexPath) as! CustomResizableCell
-        //cell.description3Label.text = data[indexPath.row]
+        cell.descriptionLabel.text = data[indexPath.row]
+        
+        if selectedIndexPath == indexPath {
+            cell.descriptionLabel.numberOfLines = 0
+        } else {
+            cell.descriptionLabel.numberOfLines = 1
+        }
+        
         return cell
     }
-   
-    // MARK: - Table view delegate
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        indexPathsToUpdate.removeAll(keepCapacity: false)
+        
+        if selectedIndexPath == indexPath {
+            selectedIndexPath = nil
+        } else {
+            selectedIndexPath = indexPath
+            indexPathsToUpdate.append(indexPath)
+        }
+        
+        if prevSelectedIndexPath != nil {
+            indexPathsToUpdate.append(prevSelectedIndexPath!)
+        }
+        
+        tableView.reloadRowsAtIndexPaths(indexPathsToUpdate, withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+   
 }
