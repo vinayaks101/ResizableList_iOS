@@ -29,14 +29,18 @@ class CustomResizableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initData()
-//        tableView.estimatedRowHeight = CGFloat(100)
-//        tableView.rowHeight = UITableViewAutomaticDimension
-
+        /**
+        For iOS 8 onwards
+        */
+        tableView.estimatedRowHeight = Storyboard.CustomCellEstimatedHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         tableView.reloadData()
     }
     
     private struct Storyboard {
         static let CustomCellIdentifier = "CustomResizableCell"
+        static let CustomCellEstimatedHeight = CGFloat(100)
     }
 
     // MARK: - Table view data source
@@ -82,12 +86,19 @@ class CustomResizableTableViewController: UITableViewController {
         tableView.reloadRowsAtIndexPaths(indexPathsToUpdate, withRowAnimation: UITableViewRowAnimation.Automatic)
     }
     
+    /**
+    For iOS 7 onwards
+    
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return CGFloat(100)
     }
+    */
+    
+    /**
+    For iOS 7 onwards
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-   
+    */
 }
