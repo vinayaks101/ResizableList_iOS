@@ -29,8 +29,8 @@ class CustomResizableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initData()
-        tableView.estimatedRowHeight = CGFloat(100)
-        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = CGFloat(100)
+//        tableView.rowHeight = UITableViewAutomaticDimension
 
         tableView.reloadData()
     }
@@ -56,8 +56,10 @@ class CustomResizableTableViewController: UITableViewController {
         
         if selectedIndexPath == indexPath {
             cell.descriptionLabel.numberOfLines = 0
+            cell.hideCompanyDetails()
         } else {
             cell.descriptionLabel.numberOfLines = 1
+            cell.showCompanyDetails()
         }
         
         return cell
@@ -78,6 +80,14 @@ class CustomResizableTableViewController: UITableViewController {
         }
         
         tableView.reloadRowsAtIndexPaths(indexPathsToUpdate, withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return CGFloat(100)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
    
 }

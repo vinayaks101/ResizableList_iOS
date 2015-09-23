@@ -130,6 +130,9 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7Y-8h-W0f">
                                             <rect key="frame" x="8" y="37" width="88" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="4IV-Gj-Tc8"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -143,6 +146,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="gm6-gI-QhB" secondAttribute="trailing" id="FA4-xH-ahW"/>
                                         <constraint firstItem="dhb-iS-XF2" firstAttribute="leading" secondItem="Xw2-mN-OKK" secondAttribute="leading" id="FQZ-RM-uNH"/>
                                         <constraint firstItem="i7Y-8h-W0f" firstAttribute="width" secondItem="xqV-Fc-6Mk" secondAttribute="width" id="Iob-wG-xhR"/>
+                                        <constraint firstItem="i7Y-8h-W0f" firstAttribute="height" secondItem="dhb-iS-XF2" secondAttribute="height" id="JmM-Zk-AGc"/>
                                         <constraint firstItem="Xw2-mN-OKK" firstAttribute="leading" secondItem="xqV-Fc-6Mk" secondAttribute="trailing" constant="8" symbolic="YES" id="MYL-Zc-GCa"/>
                                         <constraint firstItem="MOK-8N-zXc" firstAttribute="top" secondItem="i7Y-8h-W0f" secondAttribute="bottom" constant="8" symbolic="YES" id="Ri1-qy-CLL"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="gm6-gI-QhB" secondAttribute="bottom" id="Uj3-N9-QnQ"/>
@@ -158,6 +162,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="companyHeightContraint" destination="4IV-Gj-Tc8" id="5hZ-m0-GUf"/>
                                     <outlet property="companyNameLabel" destination="dhb-iS-XF2" id="HwN-oK-iNV"/>
                                     <outlet property="descriptionLabel" destination="gm6-gI-QhB" id="kxh-oP-Wr5"/>
                                     <outlet property="fullNameLabel" destination="Xw2-mN-OKK" id="fq9-8O-tjG"/>
