@@ -16,22 +16,24 @@ class CustomResizableCell: UITableViewCell {
     
     @IBOutlet weak var companyHeightContraint: NSLayoutConstraint!
     
+    struct AnimationConstants {
+        static let Duration = 1.0
+    }
+    
     func hideCompanyDetails() {
-        companyNameLabel.hidden = true
-        companyHeightContraint.constant = 0.0
-        
-        UIView.animateWithDuration(2.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animateWithDuration(AnimationConstants.Duration) {
+            self.companyNameLabel.hidden = true
+            self.companyHeightContraint.constant = 0.0
             self.companyNameLabel.setNeedsDisplay()
-            }, completion: nil)
+        }
     }
     
     func showCompanyDetails() {
-        companyNameLabel.hidden = false
-        companyHeightContraint.constant = 21.0
-        
-        UIView.animateWithDuration(2.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animateWithDuration(AnimationConstants.Duration) {
+            self.companyNameLabel.hidden = false
+            self.companyHeightContraint.constant = 21.0
             self.companyNameLabel.setNeedsDisplay()
-            }, completion: nil)
+        }
     }
     
 }
